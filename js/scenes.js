@@ -145,7 +145,7 @@ class MenuScene {
       drawText(ctx, name, W / 2, y, { align: 'center', scale: 1, color: sel ? '#ffffff' : '#9090a8', outline: '#000000' });
     });
     drawText(ctx, this.items[this.sel][1], W / 2, H - 22, { align: 'center', color: '#ffd040', outline: '#000000' });
-    drawText(ctx, '↑↓ PILIH   ENTER/F OK   ESC KEMBALI', W / 2, H - 10, { align: 'center', color: '#707088' });
+    drawText(ctx, '↑↓ PILIH   ENTER/U OK   ESC KEMBALI', W / 2, H - 10, { align: 'center', color: '#707088' });
   }
 }
 
@@ -206,7 +206,7 @@ class SelectScene {
     const i = this.stage2 ? 1 : 0;
     this.moveCursor(i);
     if (Input.confirm()) this.pick(i, 0);
-    else if (Input.wasPressed(['KeyG', 'KeyL'])) this.pick(i, 1);
+    else if (Input.wasPressed(['KeyI', 'Numpad5', 'BracketRight'])) this.pick(i, 1);
     else if (Input.back()) {
       Sound.play('back');
       if (this.stage2) { this.stage2 = false; this.done[0] = false; }
@@ -278,7 +278,7 @@ class SelectScene {
         drawText(ctx, i === 0 ? '1P' : (this.two ? '2P' : 'CPU'), x + size / 2, i === 0 ? gy - 10 : gy + size + 4, { align: 'center', color: col, outline: '#000000' });
       }
     });
-    const hint = this.two ? 'P1: A/D + F   P2: ←/→ + K   (HP = WARNA KE-2)' : '← → PILIH   F/ENTER OK   G = WARNA KE-2   ESC KEMBALI';
+    const hint = this.two ? 'P1: A/D + U   P2: ←/→ + NUM4   (HP = WARNA KE-2)' : '← → PILIH   U/ENTER OK   I = WARNA KE-2   ESC KEMBALI';
     drawText(ctx, hint, W / 2, H - 10, { align: 'center', color: '#8888a0', outline: '#000000' });
     if (this.stage2) drawText(ctx, 'PILIH LAWAN', W / 2, 108, { align: 'center', scale: 2, color: '#4080ff', outline: '#000000' });
   }
@@ -597,12 +597,12 @@ class ControlsScene {
     const rows = [
       ['', 'PEMAIN 1', 'PEMAIN 2'],
       ['GERAK', 'W A S D', '↑ ← ↓ →'],
-      ['LIGHT PUNCH (LP)', 'F', 'K / NUM4'],
-      ['HEAVY PUNCH (HP)', 'G', 'L / NUM5'],
-      ['LIGHT KICK (LK)', 'V', ', / NUM1'],
-      ['HEAVY KICK (HK)', 'B', '. / NUM2'],
-      ['LEMPAR', 'F + V', 'K + ,'],
-      ['SUPER (METER PENUH)', 'F + G', 'K + L'],
+      ['LIGHT PUNCH (LP)', 'U', 'NUM4 / ['],
+      ['HEAVY PUNCH (HP)', 'I', 'NUM5 / ]'],
+      ['LIGHT KICK (LK)', 'J', 'NUM1 / ;'],
+      ['HEAVY KICK (HK)', 'K', "NUM2 / '"],
+      ['LEMPAR', 'U + J', 'NUM4 + NUM1'],
+      ['SUPER (METER PENUH)', 'U + I', 'NUM4 + NUM5'],
       ['JEDA', 'ESC / ENTER', 'ESC / ENTER'],
     ];
     rows.forEach((r, i) => {

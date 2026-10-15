@@ -5,16 +5,16 @@
 const KEYMAP = {
   p1: {
     up: ['KeyW'], down: ['KeyS'], left: ['KeyA'], right: ['KeyD'],
-    lp: ['KeyF'], hp: ['KeyG'], lk: ['KeyV'], hk: ['KeyB'],
+    lp: ['KeyU'], hp: ['KeyI'], lk: ['KeyJ'], hk: ['KeyK'],
   },
   p2: {
     up: ['ArrowUp'], down: ['ArrowDown'], left: ['ArrowLeft'], right: ['ArrowRight'],
-    lp: ['KeyK', 'Numpad4'], hp: ['KeyL', 'Numpad5'], lk: ['Comma', 'Numpad1'], hk: ['Period', 'Numpad2'],
+    lp: ['Numpad4', 'BracketLeft'], hp: ['Numpad5', 'BracketRight'], lk: ['Numpad1', 'Semicolon'], hk: ['Numpad2', 'Quote'],
   },
 };
 const BUTTONS = ['lp', 'hp', 'lk', 'hk'];
-const CONFIRM_KEYS = ['Enter', 'Space', 'KeyF', 'KeyK', 'NumpadEnter'];
-const BACK_KEYS = ['Escape', 'Backspace', 'KeyB', 'Period'];
+const CONFIRM_KEYS = ['Enter', 'Space', 'KeyU', 'Numpad4', 'BracketLeft', 'NumpadEnter'];
+const BACK_KEYS = ['Escape', 'Backspace', 'KeyK', 'Numpad2', 'Quote'];
 
 const Input = {
   down: new Set(),
@@ -28,7 +28,7 @@ const Input = {
 
   init() {
     window.addEventListener('keydown', (e) => {
-      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space', 'Tab'].includes(e.code)) e.preventDefault();
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space', 'Tab', 'Quote', 'Slash', 'Semicolon', 'BracketLeft', 'BracketRight'].includes(e.code) || e.code.startsWith('Numpad')) e.preventDefault();
       if (!e.repeat) this.queue.add(e.code);
       this.down.add(e.code);
       for (const h of this.anyKeyHandlers) h(e);

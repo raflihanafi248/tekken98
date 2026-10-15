@@ -18,15 +18,18 @@ Semua grafis digambar secara prosedural dan semua audio disintesis dengan WebAud
 | Aksi | Pemain 1 | Pemain 2 |
 |---|---|---|
 | Gerak / lompat / jongkok | `W A S D` | Tombol panah |
-| Light Punch (LP) | `F` | `K` / Numpad 4 |
-| Heavy Punch (HP) | `G` | `L` / Numpad 5 |
-| Light Kick (LK) | `V` | `,` / Numpad 1 |
-| Heavy Kick (HK) | `B` | `.` / Numpad 2 |
-| Lemparan | `F + V` | `K + ,` |
-| Super (meter penuh) | `F + G` | `K + L` |
+| Light Punch (LP) | `U` | Numpad 4 / `[` |
+| Heavy Punch (HP) | `I` | Numpad 5 / `]` |
+| Light Kick (LK) | `J` | Numpad 1 / `;` |
+| Heavy Kick (HK) | `K` | Numpad 2 / `'` |
+| Lemparan | `U + J` | Numpad 4 + 1 |
+| Super (meter penuh) | `U + I` | Numpad 4 + 5 |
 | Jeda | `Esc` / `Enter` | `Esc` / `Enter` |
 
+* Tangan kiri untuk arah, tangan kanan untuk serangan: pukulan di baris atas (`U I`), tendangan di baris bawah (`J K`).
+* Pemain 2 memakai Numpad. Di laptop tanpa Numpad, pakai `[ ]` untuk pukulan dan `; '` untuk tendangan.
 * Di mode 1 pemain, **kedua set tombol** bisa dipakai.
+* Menu: `Enter`/`U` untuk pilih, `Esc`/`K` untuk kembali.
 * **Gamepad** didukung: X = LP, Y = HP, A = LK, B = HK, LB = lempar, RB = super, Start = jeda.
 * **Blok**: tahan arah menjauhi lawan. Serangan **bawah** harus diblok sambil jongkok, serangan **lompat** harus diblok sambil berdiri.
 * **Dash**: tekan →→ atau ←← dengan cepat.
